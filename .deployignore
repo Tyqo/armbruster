@@ -1,0 +1,9 @@
+settings_db.inc
+/tmp/
+/src/
+.git*
+.deployignore
+deploy.sh
+node_modules
+packages.json
+package-lock.json
