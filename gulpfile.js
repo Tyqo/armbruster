@@ -76,7 +76,7 @@ var svgoOptions = {
 var settings = {
 
 	browserSync: {
-		proxy:'https://' + pkg.name + '.localhost',
+		proxy:'https://' + pkg.name + '.dick.localhost',
 		open: false,	// Don't open browser, change to "local" if you want or see https://browsersync.io/docs/options#option-open
 		notify: false,	// Don't notify on every change
 		https:  {
@@ -370,11 +370,11 @@ function favicon() {
 function checkKey() {
 	try {
 		fs.accessSync(settings.browserSync.https.key, fs.constants.R_OK);
-		// console.log('https');
+		console.log('https');
 	} catch (err) {
 		settings.browserSync.https = null;
-		settings.browserSync.proxy = 'http://' + pkg.name + '.localhost';
-		// console.error('http');
+		settings.browserSync.proxy = 'http://' + pkg.name + '.dick.localhost';
+		console.error(err);
 	}
 }
 

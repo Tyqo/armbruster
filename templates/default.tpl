@@ -10,7 +10,7 @@
 
 	<link rel="shortcut icon" href="/favicon.png" />
 
-	<link rel="stylesheet" type="text/css" href="{ASSET:dist/css/main.css}" />
+	<link rel="stylesheet" type="text/css" href="dist/css/main.css" />
 
 	{LAYOUTMODE_STARTSCRIPT}
 	{IF (!{LAYOUTMODE})}
@@ -19,13 +19,6 @@
 	{ENDIF}
 </head>
 <body>
-	<!-- Inject SVG sprites -->
-	<object 
-		type="image/svg+xml" 
-		data="/img/icons.svg" 
-		onload="this.parentNode.replaceChild(this.getSVGDocument().childNodes[0], this)">
-	</object>
-
 	{INCLUDE:PATHTOWEBROOT.'templates/partials/header.tpl'}
 
 	<section class="main-content">
