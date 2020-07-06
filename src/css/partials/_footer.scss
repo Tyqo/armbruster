@@ -1,0 +1,18 @@
+.main-footer {
+	margin: $gutter * 2 0;
+}
+
+.footer-nav {
+	@include inner-bound;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	
+	* {
+		padding: 0 $gutter/2;
+	}
+	
+	:last-child {
+		padding-right: 0;
+	}
+}

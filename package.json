@@ -39,6 +39,7 @@
     "gulp-terser": "^1.2.0",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
+    "slick-carousel": "^1.8.1",
     "yargs": "^15.1.0"
   },
   "project_settings": {
@@ -47,5 +48,7 @@
   "browserslist": [
     "> 2% in DE and not dead and not ie < 11"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "tabulator-tables": "^4.6.3"
+  }
 }

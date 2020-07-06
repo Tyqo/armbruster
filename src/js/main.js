@@ -7,25 +7,23 @@
 function APP () {
 
 	var self = this;
-
-	self.debug = false;
+	self.debug = true;
+	
+	self.Slider = new Slider(self);
 
 	this.init = function() {
-
 		document.addEventListener('DOMContentLoaded', this.setup);
 	};
 
 	this.setup = function() {
-		
 		if (this.debug) {
 			console.log('APP::init');
 		}
 		
-		this.pageInit();
+		self.pageInit();
 	};
 
 	this.pageInit = function() {
-
 		if (this.debug) {
 			console.log('APP::pageInit');
 		}
@@ -33,25 +31,13 @@ function APP () {
 		document.body.classList.add('page-has-loaded');
 
 		this.main();
+		self.Slider.init();
 	};
 
 	this.main = function() {
-
-		this.initThrottleResize();
-
-		// Lazy loadiong images
-		this.bLazy = new Blazy({
-			selector: '.lazy',
-			offset: 100,
-			successClass: 'lazy--loaded',
-			errorClass: 'lazy--failed',
-			error: function(el) {
-			 	el.src = '/img/noimage.svg';
-			}
-		});
+		
 	};
 };
-
 
 var app = new APP();
 app.init();

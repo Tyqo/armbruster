@@ -10,9 +10,9 @@
  * The vertical unit
  * Give with rem as unit, e.g. 1.5rem
  */
-$vertical-unit: 1.5rem !default;
+$vertical-unit: 1.25rem !default;
 
-$modular-scale-ratio: 1.25 !default; // $major-third;
+$modular-scale-ratio: 1.025 !default; // $major-third;
 
 @function modular-scale($level) {
 	@return ($level + 1) * $modular-scale-ratio;

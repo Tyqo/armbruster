@@ -119,6 +119,7 @@ var settings = {
 		src: [
 			'./src/js/vendor/**/*.js',
 			'./node_modules/jquery/dist/jquery.min.js',
+			'./node_modules/slick-carousel/slick/slick.min.js',
 			// Add single vendor files here,
 			// they will be copied as is to `{prefix}/js/vendor/`,
 			// e.g. './node_modules/flickity/dist/flickity.pkgd.min.js',
@@ -129,6 +130,8 @@ var settings = {
 	cssVendor: {
 		src:	[
 			'./src/css/vendor/**/*.css',
+			'./node_modules/slick-carousel/slick/slick.css',
+			'./node_modules/slick-carousel/slick/slick-theme.css'
 			// Add single vendor files here,
 			// they will be copied as is to `{prefix}/css/vendor/`,
 			// e.g. './node_modules/flickity/dist/flickity.min.css'
