@@ -8,7 +8,10 @@ body {
 }
 
 .headline {
-	@include type-setting(2);
+	font-family: 'Allura';
+	font-size: 2.9rem;
+	line-height: 1.42;
+	// @include type-setting(2);
 }
 
 .copy-text {

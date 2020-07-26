@@ -8,12 +8,14 @@
 	
 	<link rel="shortcut icon" href="/favicon.png" />
 
-	<link rel="stylesheet" type="text/css" href="dist/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/dist/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/dist/css/vendor/slick.css" />
+	<link rel="stylesheet" type="text/css" href="/dist/css/vendor/slick-theme.css" />
 
 	{LAYOUTMODE_STARTSCRIPT}
 	{IF (!{LAYOUTMODE})}
-	<script src="dist/js/vendor/jquery.min.js"></script>
-	<script src="dist/js/main.js"></script>
-	<script src="dist/js/vendor/slick.min.js" charset="utf-8"></script>
+		<script src="dist/js/vendor/jquery.min.js"></script>
+		<script src="dist/js/main.js"></script>
+		<script src="dist/js/vendor/slick.min.js" charset="utf-8"></script>
 	{ENDIF}
 </head>

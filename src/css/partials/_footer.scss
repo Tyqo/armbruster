@@ -1,5 +1,7 @@
 .main-footer {
-	margin: $gutter * 2 0;
+	margin-top: 3 * $gutter;
+	padding: $gutter * 2 0;
+	background-color: $accent-color;
 }
 
 .footer-nav {

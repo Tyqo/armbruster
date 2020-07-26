@@ -29,11 +29,13 @@
 		
 		<div class="slider__wrapper">
 			{LOOP VAR(images)}
-			<figure>
-				<img src="/{VAR:imagePath}{VAR:gallery_image_internal_filename}" alt="{VAR:gallery_image_title}">
-				<figcaption>
-					<h2>{VAR:gallery_image_title}</h2>
-					<p>{VAR:gallery_image_description}</p>
+			<figure class="slider__figure figure">
+				<img class="slider__image image" src="/{VAR:imagePath}{VAR:gallery_image_internal_filename}" alt="{VAR:gallery_image_title}">
+				<figcaption class="slider__caption">
+					<div class="slider__article inner-bound">
+						<h2>{VAR:gallery_image_title}</h2>
+						<p>{VAR:gallery_image_description}</p>
+					</div>
 				</figcaption>
 			</figure>
 			{ENDLOOP VAR}
