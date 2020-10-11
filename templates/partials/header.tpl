@@ -1,18 +1,22 @@
 <header class="main-header">
-	<div class="main-header__wrapper">
-		<a class="home__link" href="/" title="zur Startseite">
-			<img width="800" height="450" class="home__logo" src="dist/img/Armbruster_logo_placeholder.png" alt="zur Startseite">
+  <nav class="center-nav outer-border" aria-label="Main">
+		<a href="/" class="link logo">
+			<span class="header-icon" aria-hidden="true">
+				{INCLUDE:PATHTOWEBROOT.'dist/img/Logo_Brennerei_Armbruster_sw-01.svg'}
+			</span>
+			<span class="visualy-hidden">
+				{PAGETITLE:2}
+			</span>
 		</a>
-		
-		<button id="toggle-nav" class="side-nav" type="button" name="button">
-			<span>Menü</span>
-			{INCLUDE:PATHTOWEBROOT.'dist/img/Menü Icon.svg'}
-		</button>
-		
-		<!-- <nav role="navigation" class="main-nav">
-			{LOOP NAVIGATION(1)}
-				<a href="{NAVIGATION:link}">{NAVIGATION:title}</a>
-			{ENDLOOP NAVIGATION}
-		</nav> -->
-	</div>
+    <ul class="center-nav__list">
+      {LOOP NAVIGATION (1)}
+      <li class="center-nav__item">
+        <a class="center-nav__link" {IF("{NAVIGATION:id}" == "{PAGEID}")}aria-current="location"{ENDIF} href="{NAVIGATION:link}">
+					{NAVIGATION:title}
+				</a>
+      </li>
+      {ENDLOOP NAVIGATION}
+    </ul>
+  </nav>
+	<!-- INCLUDE:PATHTOWEBROOT.'templates/partials/mobile_nav.tpl' -->
 </header>

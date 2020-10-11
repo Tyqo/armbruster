@@ -1,4 +1,4 @@
-{SCRIPT:1}
+{SCRIPT:1:phpincludes}
 {IF ({LAYOUTMODE})}
 <section class="cmt-object-options cmt-layer">
 	<h2 class="cmt-object-options-head cmt-layer-handle">optionale Variablen</h2>

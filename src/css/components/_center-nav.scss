@@ -1,0 +1,37 @@
+.center-nav {
+	display: flex;
+	min-height: $header-height;
+	padding: 1rem 0;
+
+	&__list {
+		display: flex;
+		// min-height: $header-height;
+		margin: auto;
+		justify-content: space-around;
+		list-style: none;
+
+		@include for-size(phone) {
+			flex-flow: column;
+			text-align: center;
+		}
+	}
+
+	&__item {
+		margin:$gutter/2 $gutter*1;
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	&__link {
+		margin: 0;
+		text-transform: uppercase;
+		background: none;
+
+	}
+}

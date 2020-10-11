@@ -3,7 +3,7 @@
  * Conten-o-mat Einstellungen/Konstanten
  */
 
-// Pfad, in dem sich der ROOT der Homepage befindet (z.B. "/" bei www.meinedomain.de (Standard) oder 
+// Pfad, in dem sich der ROOT der Homepage befindet (z.B. "/" bei www.meinedomain.de (Standard) oder
 // "myweb/" bei www.meinedomain/myweb/), immer mit führendem und ggf. abschließendem '/' angeben!
 define ('WEBROOT', '/');
 
@@ -23,7 +23,7 @@ define ('CHARSET', 'utf-8');
 define ('CMT_DEFAULTCHARSET', 'utf-8');
 
 // Name des Webs
-define ('WEBNAME', '');
+define ('WEBNAME', 'Brennerei Armbruster');
 
 // Datenbankfehler Logging
 define ('CMT_DBERRORLOG', '1');
@@ -45,6 +45,8 @@ define('CMT_DEFAULTTIMEZONE', 'Europe/Berlin');
 
 // URL des Skriptes
 define ("SELF", basename($_SERVER['PHP_SELF']));
+
+define ('CANONICAL', 'https://brennerei-klaus-armbruster.de');
 
 // aktueller Pfad minus WEBROOT ergibt den aktuellen ROOT
 $actPath = preg_replace('/^'.preg_quote(WEBROOT, '/').'/', '', $_SERVER['PHP_SELF']);

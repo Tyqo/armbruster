@@ -1,19 +1,121 @@
+/**
+ * src/css/partials/_typography.scss
+ *
+ * Typography related styles
+ *
+ */
+
+
+/************
+ * Webfonts *
+ ************/
+
+// Woff2 is preferered and - if available - the only format needed.
+// Use a font-face include line for each font face (regular, bold, italic, bold-italic, like shown below
+
+/**
+ * @example
+ *
+ * @include font-face('FontName', '../fonts/FontName-Regular', normal, normal, $file-types: woff2);
+ * @include font-face('FontName', '../fonts/FontName-Bold', bold, normal, $file-types: woff2);
+ * @include font-face('FontName', '../fonts/FontName-Italic', normal, italic, $file-types: woff2);
+ */
+
+
 html {
-	@include fluid-type(font-size, $tablet-portrait-breakpoint, $desktop-breakpoint, 11px, 22px);
+	// @include fluid-type(font-size, $tablet-portrait-breakpoint, $desktop-breakpoint, 1rem, 1.6rem);
 }
 
 body {
-	@include type-setting(0);
+	// Sets up font-size and line-height
+	// according to vertical rhythm.
+	// @see mixins in mixins/_vertical_rhythm.scss
+	@include type-setting(0, 0);
 	color: $text-color;
+
+	font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+// @mixin big-headline {
+// 	hyphens: auto;
+// 	@include for-size(tablet-portrait-up) {
+// 		hyphens: manual;
+// 	}
+//
+// 	text-transform: uppercase;
+// 	font-weight: 900;
+// 	@include type-setting(3);
+// 	line-height: 0.95;
+// }
+
+@mixin headline {
+	hyphens: auto;
+	@include for-size(tablet-portrait-up) {
+		hyphens: manual;
+	}
+
+	@include type-setting(3, 0);
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+}
+
+@mixin sub-headline {
+	hyphens: auto;
+	@include for-size(tablet-portrait-up) {
+		hyphens: manual;
+	}
+
+	@include type-setting(2, 0);
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+}
+
+@mixin teaser {
+	@include type-setting(0);
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+}
+
+@mixin text {
+	@include type-setting(0);
 }
 
 .headline {
-	font-family: 'Allura';
-	font-size: 2.9rem;
-	line-height: 1.42;
-	// @include type-setting(2);
+	color: $primary-color;
+	@include headline;
+	line-height: 1.2;
 }
 
-.copy-text {
-	@include type-setting(0);
+.sub-headline {
+	@include sub-headline;
+}
+
+.teaser {
+	@include teaser;
+}
+
+.text--bold {
+	font-weight: bold;
+}
+
+.text {
+	@include text;
+}
+
+.text ul {
+	list-style: none;
+	margin: $gutter*2 0;
+
+	li {
+		@include teaser;
+		font-weight: bold;
+		text-transform: uppercase;
+
+		margin: $gutter * 1 auto;
+		padding-left: 1em;
+		position: relative;
+	}
 }

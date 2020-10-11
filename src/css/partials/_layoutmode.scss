@@ -1,0 +1,25 @@
+.cmt-layout {
+	.long-haedline__article {
+		display: block !important;
+	}
+
+	.quote::after, .quote::before {
+		z-index: -1 !important;
+	}
+
+	.bullets__wrapper {
+		display: block !important;
+		padding: $gutter*2;
+	}
+	
+	.bullets__headline {
+		margin-left: 0;
+		text-align: start;
+	}
+	
+	.big-headline {
+		display: inline-block !important;
+		min-width: 12rem;
+		min-height: 1em;
+	}
+}

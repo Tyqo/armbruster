@@ -1,56 +1,94 @@
 .main-header {
-	display: block;
-	background: rgba($white, 0.9);
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 10;
-	width: 100%;
-	
-	&__wrapper {
-		display: flex;
-		max-width: $inner-bound-width;
-		height: $header-height;
-		margin: 0 auto;
-		
-		justify-content: space-between;
-		align-items: center;
+  color: $text-color;
+  font-weight: 700;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transition: transform 250ms ease-in-out;
+	transform: none;
+
+	height: calc(#{$header-height});
+	background: rgba(255, 255, 255, 0.82);
+
+	@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+		background: rgba(255, 255, 255, 0.75);
+		backdrop-filter: blur(11px);
+		-webkit-backdrop-filter: blur(11px);
 	}
-	
+
+	.center-nav__list {
+		margin-right: 0;
+		margin-bottom: 0;
+		display: none;
+		@include for-size(tablet-landscape-up) {
+			display: flex;
+		}
+	}
+
+  .center-nav__link {
+    position: relative;
+		@include type-setting(1);
+		letter-spacing: 0.1em;
+
+    &:hover, &:focus {
+      color: $primary-color;
+    }
+  }
+
+	.header-icon {
+		padding: 0;
+		margin: 0;
+		line-height: 0;
+		display: inline-block;
+		margin-left: $gutter;
+
+		@include for-size(tablet-portrait-up) {
+			margin-left: $gutter/2;
+		}
+
+		@include for-size(desktop-up) {
+			margin-left: 0;
+		}
+
+		svg {
+			width: calc(#{$header-height} * 2);
+			height: calc(#{$header-height});
+			padding: 0;
+			margin: #{$gutter * -1} 0 calc(#{$header-height} * -0.25) #{$gutter * -1};
+			padding-bottom: 0.2em;
+
+			#flaschen {
+				display: none;
+			}
+
+			#brennerei * {
+				fill: $primary-color;
+			}
+		}
+	}
 }
 
-.home {
-	&__link {
-		
-	}
-	
-	&__logo {
-		display: block;
-		padding: $gutter/2 $gutter/2 $gutter/2 0;
-		color: $white;
-		height: $header-height;
-		width: auto;
-	}
+a[aria-current="location"] {
+	position: relative;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: bottom;
+	background-size: 100% 10%;
+	background-repeat: no-repeat;
 }
 
-.side-nav {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-	background: none;
-	border: none;
-	
-	span {
-		text-transform: uppercase;
-		font-size: 25px;
-		line-height: 0.8;
-		height: auto;
-		padding: 0 $gutter/2;
+@include for-size(tablet-landscape-up) {
+	.scrolling-down.page-has-scrolled {
+	  .main-header {
+	    transform: translateY(calc(#{$header-height} * -1));
+	  }
 	}
-	
-	svg {
-		height: $header-height/2;
-		width: $header-height/2;
+
+	.scrolling-up {
+	  .main-header {
+	    transform: none;
+	  }
 	}
 }

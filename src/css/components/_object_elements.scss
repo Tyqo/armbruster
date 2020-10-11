@@ -1,0 +1,7 @@
+.object-element {
+	@include outer-border;
+
+	&:first-of-type {
+		margin-top: $gutter * 3;
+	}
+}

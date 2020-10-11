@@ -1,1 +1,3 @@
-{HTML:1:img}
+<div class="object-element">
+	{HTML:1:media/layoutmode}
+</div>

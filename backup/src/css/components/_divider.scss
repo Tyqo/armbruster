@@ -1,0 +1,101 @@
+// 12 Grid
+// 300px rand abstand - 1320px
+// 1rem gutter
+
+.divider {
+	display: flex;
+	margin: $gutter*2 auto;
+	
+	&__part {
+		flex: 1 1 auto; 
+		
+		// &:first-of-type {
+		// 	margin-right: $gutter;
+		// }
+		// 
+		// &:last-of-type {
+		// 	margin-left: $gutter;
+		// }
+		// 
+		// &:only-child, &:first-of-type:last-of-type {
+		// 	margin-left: 0;
+		// 	margin-right: 0;
+		// }
+		// 
+		// 12 raster
+		// 
+		// 12 / 12 = 1
+		// 11 / 12 = 0.9167
+		// 10 / 12 = 0.8333
+		//  9 / 12 = 0.75
+		//  8 / 12 = 0.6667
+		//  7 / 12 = 0.5833
+		//  6 / 12 = 0.5
+		//  5 / 12 = 0.4167
+		//  4 / 12 = 0.3333
+		//  3 / 12 = 0.25
+		//  2 / 12 = 0.1667
+		//  1 / 12 = 0.0833
+		
+		&--third {
+			flex: 0 0 100vw * (4/12);
+		}
+		
+		&--half {
+			flex: 0 0 100vw * (6/12);
+		}
+		
+		&--big {
+			flex: 0 0 100vw * (7/12);
+		}
+		
+		&--small {
+			flex: 0 0 100vw * (3/12);
+		}
+	}
+}
+
+// .spacer-left {
+// 	&--half {
+// 		padding-left: 50%;
+// 	}
+// 
+// 	&--third {
+// 		padding-left: 33.33%;
+// 	}
+// 
+// 	&--big {
+// 		padding-left: 60%;
+// 	}
+// 
+// 	&--small {
+// 		padding-left: 40%;
+// 	}
+// }
+// 
+// .spacer-right {
+// 	&--half {
+// 		padding-right: 50%;
+// 	}
+// 
+// 	&--third {
+// 		padding-right: 33.33%;
+// 	}
+// 
+// 	&--big {
+// 		padding-right: 60%;
+// 	}
+// 
+// 	&--small {
+// 		padding-right: 40%;
+// 	}
+// }
+
+.content-teaser {
+	
+}
+
+.content-breaker {
+	background-color: $primary-color;
+	color: $white;
+}

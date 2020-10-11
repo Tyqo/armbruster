@@ -1,20 +1,48 @@
 .main-footer {
-	margin-top: 3 * $gutter;
-	padding: $gutter * 2 0;
-	background-color: $accent-color;
+  background: $accent-color;
+  margin-top: auto;
+	color: $contrast-color;
+	overflow: hidden;
 }
 
-.footer-nav {
-	@include inner-bound;
+.footer {
 	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	
-	* {
-		padding: 0 $gutter/2;
+	flex-wrap: wrap;
+	padding: 2 * $gutter 0;
+
+	li {
+		list-style: none;
 	}
-	
-	:last-child {
-		padding-right: 0;
+}
+
+.contact-info {
+	a {
+		@include text;
+	}
+
+	.stack {
+		min-width: 32ch;
+	}
+}
+
+.additional-links {
+	margin-top: $gutter * 2;
+
+	@include for-size(tablet-landscape-up) {
+		justify-self: flex-end;
+		align-self: flex-end;
+		margin-left: auto;
+	}
+
+	li {
+		margin: 0 $gutter;
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+
+		&:last-of-type {
+			margin-right: 0;
+		}
 	}
 }

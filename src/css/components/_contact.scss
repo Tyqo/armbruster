@@ -1,0 +1,250 @@
+.contact {
+	margin-top: $gutter*2;
+  margin-bottom: $gutter*4;
+  $contact-width: 66.66%;
+  padding: 0 $gutter*2;
+
+  @include for-size(tablet-landscape-up) {
+		width: 66.66%;
+		padding: 0;
+  }
+
+  @include for-size(desktop-up) {
+    // max-width: $inner-bound-width;
+		width: 50%;
+		padding: 0;
+  }
+
+  &__item {
+    margin: $gutter 0;
+
+		@include for-size(tablet-portrait-up) {
+			display: flex;
+		}
+  }
+
+  &__input, &__textarea {
+		@include text;
+		margin-bottom: 0;
+		font-family: inherit;
+    display: block;
+		width: 100%;
+    background: none;
+		color: inherit;
+    border: $stroke-width solid currentColor;
+    padding: $stroke-width 0.5em $stroke-width/2;
+    flex: 0 0 $contact-width;
+		border-radius: 0;
+		box-shadow: none;
+
+    &:focus {
+      background: linear-gradient(45deg, $primary-color, $primary-color 14%, transparent 14.05%);
+      background-position: left bottom;
+      background-size: 6.5em 6.5em;
+      background-repeat: no-repeat;
+    }
+  }
+
+	&__input {
+		height: 2.2em;
+	}
+
+  &__label {
+    @include teaser;
+		text-transform: uppercase;
+		font-weight: bold;
+    margin-bottom: 0;
+    display: block;
+    flex: 0 0 (100 - $contact-width);
+		padding: 0.05em $stroke-width 0;
+		max-height: 2.2em;
+
+    &[data-required=true] {
+      &::after {
+        content: "*";
+      }
+    }
+  }
+
+  .checkbox-box {
+		$size: 1.4em;
+    width: $size;
+    height: $size;
+    position: relative;
+    background: currentColor;
+    margin-right: 1ex;
+
+    label {
+      cursor: pointer;
+      background: #fff;
+      width: calc(#{$size} - #{$stroke-width*2});
+      height: calc(#{$size} - #{$stroke-width*2});
+      position: absolute;
+      top: $stroke-width;
+      left: $stroke-width;
+
+      &:after {
+        content: '';
+        width: calc(#{$size} - #{$stroke-width*2});
+        height: calc(#{$size} - #{$stroke-width*2});
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+
+      & svg {
+        opacity: 0;
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: calc(#{$size} - #{$stroke-width*2});
+        height: calc(#{$size} - #{$stroke-width*2});
+        stroke-width: $stroke-width * 6;
+				stroke: $accent-color;
+      }
+
+      &:hover::after, &:focus::after {
+        opacity: 0.3;
+      }
+
+    }
+    input[type=checkbox] {
+      position: relative;
+      z-index: -1;
+      top: 1px;
+      left: 1px;
+      width: 26px;
+      height: 26px;
+			opacity: 0;
+
+      &:checked + label svg {
+        opacity: 1;
+      }
+
+      &:hover + label::after, &:focus + label::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__confirm {
+
+    .contact__label {
+			@include text;
+      display: block;
+      flex-grow: 1;
+			padding: 0;
+			text-transform: none;
+			color: $accent-color;
+    }
+  }
+
+  &__note, &__button {
+    display: block;
+  }
+
+  &__note {
+    @include text;
+		margin-top: -$gutter/2;
+		margin-bottom: $gutter/2;
+		@include for-size(tablet-portrait-up) {
+			margin-left: 100 - $contact-width;
+		}
+  }
+
+	&__button {
+		font-weight: 700 !important;
+	}
+
+  &__confirm {
+    display: flex;
+    margin: $gutter 0 $gutter*2;
+  }
+
+  &__main {
+    margin: $gutter*2 0;
+  }
+
+	&__footer {
+		@include for-size(tablet-portrait-up) {
+			margin-left: 100 - $contact-width;
+		}
+	}
+
+	.message, .error-message {
+		width: 100%;
+		@include text;
+		margin-bottom: 0;
+
+		@include for-size(tablet-portrait-up) {
+			margin-left: 100 - $contact-width;
+			width: $contact-width;
+		}
+	}
+
+	.error-message {
+		margin-top: -$gutter/2;
+		color: $error-color;
+	}
+
+	.message {
+		// @include type-setting(1);
+		font-weight: bold;
+	}
+
+	.contact__footer .error-message {
+		width: 100%;
+		margin: $gutter*-2 0 $gutter*2 0;
+	}
+
+	.error {
+		color: $error-color;
+	}
+}
+
+.overlay-message {
+	position: fixed;
+	z-index: 1;
+	color: $contrast-color;
+	background: rgba($accent-color, 0.8);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	&__article {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&__headline {
+		margin-bottom: $gutter / 2;
+	}
+
+	.overlay__close {
+		position: fixed;
+		top: $gutter*2;
+		right: $gutter*2;
+		width: 3em;
+		height: 3em;
+		padding: $stroke-width*2;
+		background: none;
+		transition: transform 250ms ease-in-out;
+
+		#cross {
+			fill: $contrast-color;
+			stroke: $contrast-color;
+			stroke-width: $stroke-width*6;
+		}
+	}
+
+}
+
+.scrolling-up .overlay__close {
+	transform: translateY($header-height);
+}

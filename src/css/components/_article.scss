@@ -1,0 +1,47 @@
+.article {
+	padding: $gutter * 2 $gutter * 2 $gutter * 4;
+	// margin: $gutter*2 0 $gutter * 4;
+	position: relative;
+	display: flex;
+
+
+	&__wrapper {
+		margin: inherit auto;
+		height: auto;
+		justify-content: center;
+		align-self: center;
+	}
+}
+
+.article--small-left {
+	justify-content: flex-start;
+	.article__wrapper {
+		@include flex-small--left;
+	}
+
+
+}
+
+.article--small-right {
+	justify-content: flex-end;
+	.article__wrapper {
+		@include flex-small--right;
+	}
+
+}
+
+.article--big-left {
+	justify-content: flex-start;
+	.article__wrapper {
+		@include flex-big--left;
+	}
+
+}
+
+.article--big-right {
+	justify-content: flex-end;
+	.article__wrapper {
+		@include flex-big--right;
+	}
+
+}

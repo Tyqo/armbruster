@@ -1,6 +1,13 @@
-<figure>
-	{IMAGE:1:media}
-	{IF({LAYOUTMODE} == true || {ISSET:head2:CONTENT})}
-	{IF ({LAYOUTMODE} == true || {ISSET:head1:CONTENT})}{IF({LAYOUTMODE})}<label>Bildunterschrift</label>{ENDIF}<figcaption>{HEAD:1}</figcaption>{ENDIF}
-	<footer>{IF({LAYOUTMODE})}<label>Copyright</label><br>{ENDIF}<small class="image-copyright">{HEAD:2}</small></footer>{ENDIF}
-</figure>
+<div class="object-element">
+	{IF ({LAYOUTMODE})}
+		{IMAGE:1:media}
+		<dl class="">
+			<dt>Kurze Bildbeschreibung</dt>
+			<dd>{HEAD:1}</dd>
+		</dl>
+	{ELSE}
+		<figure class="figure">
+			<img class="image" src="{IMAGESRC:1}" alt="{HEAD:1}">
+		</figure>
+	{ENDIF}
+</div>

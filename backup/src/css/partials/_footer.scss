@@ -1,0 +1,20 @@
+.main-footer {
+	margin-top: 3 * $gutter;
+	padding: $gutter * 2 0;
+	background-color: $accent-color;
+}
+
+.footer-nav {
+	@include inner-bound;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	
+	* {
+		padding: 0 $gutter/2;
+	}
+	
+	:last-child {
+		padding-right: 0;
+	}
+}

@@ -6,14 +6,14 @@
  * Colors *
  **********/
 
-$primary-color:#263E10;
-$accent-color:#F3EEE6;
+$primary-color: #D69400;
+$accent-color: #292929;
+$contrast-color: #FFFFFF;
 
-$text-color:#303036;
+$error-color: #c61932;
 
-$white: #fff;
-$black: #000;
-
+$text-color: darken($accent-color, 4%);
+$light-accent-color: lighten($accent-color, 42%);
 
 
 /************
@@ -21,10 +21,14 @@ $black: #000;
  ************/
 
 $gutter:1rem;
-$header-height:100px;
-$inner-bound-width: 1320px;
+$header-height: var(--header-height);
+$inner-bound-width:78rem;
 
+$section-height: var(--max-browser-height);
 
+$stroke-width: $gutter*0.25;
+
+$outer-border: $gutter*2;
 
 /********************
  * Options/Switches *

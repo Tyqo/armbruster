@@ -3,18 +3,15 @@
  */
 
 @import "settings";
+@import "partials/webfonts";
 
 @import "libhalma/libhalma";
-
+@import "components/center-nav";
 @import "partials/common";
-@import "partials/webfonts";
 @import "partials/typography";
 @import "partials/header";
 @import "partials/footer";
-
-@import "components/slider";
-@import "components/center-paragraph";
-@import "components/main-grid";
+@import "partials/layoutmode";
+@import "components/start_slider";
+@import "components/object_elements";
 @import "components/divider";
-
-
