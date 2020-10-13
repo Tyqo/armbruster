@@ -81,6 +81,7 @@ body {
 
 @mixin text {
 	@include type-setting(0);
+	margin-bottom: $gutter * 2;
 }
 
 .headline {

@@ -57,7 +57,7 @@
 			width: calc(#{$header-height} * 2);
 			height: calc(#{$header-height});
 			padding: 0;
-			margin: #{$gutter * -1} 0 calc(#{$header-height} * -0.25) #{$gutter * -1};
+			margin: #{$gutter * -1} 0 calc(#{$header-height} * -0.25) 0;
 			padding-bottom: 0.2em;
 
 			#flaschen {

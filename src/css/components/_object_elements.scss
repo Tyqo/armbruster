@@ -1,7 +1,44 @@
 .object-element {
+	.object-element {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.object-element {
 	@include outer-border;
 
 	&:first-of-type {
 		margin-top: $gutter * 3;
+	}
+
+	& > p {
+		margin-bottom: $gutter * 3;
+	}
+
+	& > h1 {
+		margin-bottom: $gutter;
+	}
+
+	& > h2 {
+		margin-bottom: $gutter / 2;
+	}
+
+	& > h3 {
+		margin-bottom: $gutter / 2;
+	}
+
+	& > figure {
+		margin-bottom: $gutter * 3;
+	}
+
+	button {
+
+	}
+}
+
+.main-content {
+	.object-element:first-of-type {
+		margin-top: var(--header-height);
 	}
 }

@@ -26,7 +26,7 @@ class ContactController extends Controller {
 	public function actionDefault() {
 		$data = $this->cmt->getVar('cmtContentData');
 		$this->Formomat->setMultipleParserVars($data);
-		
+
 		if (!empty($this->postvars)) {
 			try {
 				$this->Formomat->process();
@@ -35,7 +35,10 @@ class ContactController extends Controller {
 				echo $e;
 			}
 		}
-		
+
+
+		$this->article = $this->Formomat->render($this->templatesPath.'article.tpl');
+		$this->parser->setParserVar('article', $this->article);
 		$this->content = $this->Formomat->render($this->templatesPath.'form.tpl');
 	}
 }

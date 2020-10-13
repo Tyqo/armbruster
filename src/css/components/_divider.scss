@@ -1,15 +1,33 @@
+$dividerBreakpoint: 'tablet-portrait-up';
+
+
 .divider {
 	margin-bottom: $gutter * 3;
 
-	@include for-size(tablet-portrait-up) {
+
+
+	@include for-size(tablet-landscape-up) {
+		display: flex;
+
+		&:first-child figure {
+			flex-basis: 33%;
+		}
+	}
+
+	@include for-size($dividerBreakpoint) {
 		display: flex;
 		gap: $gutter * 3;
+
+		&:first-child figure {
+			flex-basis: 50%;
+		}
 	}
 
 	&__article {
 		flex: 0 1 50%;
 		display: flex;
 		flex-flow: column;
+		margin-bottom: $gutter * 1.5;
 	}
 
 	&__aside {
@@ -17,7 +35,7 @@
 		align-self: start;
 		margin-bottom: $gutter * 1.5;
 
-		@include for-size(tablet-portrait-up) {
+		@include for-size($dividerBreakpoint) {
 			@include fixed-ratio (3, 4);
 		}
 
@@ -50,7 +68,7 @@
 
 	&--3-4 {
 		.divider__article {
-			@include for-size(tablet-portrait-up) {
+			@include for-size($dividerBreakpoint) {
 				flex-grow: 0;
 				flex-shrink: 0;
 				flex-basis: calc((100% / 12) * 4);
@@ -60,7 +78,7 @@
 		}
 
 		.divider__aside {
-			@include for-size(tablet-portrait-up) {
+			@include for-size($dividerBreakpoint) {
 				flex-grow: 0;
 				flex-shrink: 0;
 				flex-basis: calc((100% / 12) * 3);
@@ -71,7 +89,7 @@
 
 	&--4-3 {
 		.divider__article {
-			@include for-size(tablet-portrait-up) {
+			@include for-size($dividerBreakpoint) {
 				flex-grow: 0;
 				flex-shrink: 0;
 				flex-basis: calc((100% / 12) * 4);
@@ -80,7 +98,7 @@
 		}
 
 		.divider__aside {
-			@include for-size(tablet-portrait-up) {
+			@include for-size($dividerBreakpoint) {
 				flex-grow: 0;
 				flex-shrink: 0;
 				flex-basis: calc((100% / 12) * 3);

@@ -1,4 +1,9 @@
 .cmt-layout {
+
+	.main-content {
+		margin-top: var(--header-height);
+	}
+
 	.long-haedline__article {
 		display: block !important;
 	}
@@ -11,15 +16,20 @@
 		display: block !important;
 		padding: $gutter*2;
 	}
-	
+
 	.bullets__headline {
 		margin-left: 0;
 		text-align: start;
 	}
-	
+
 	.big-headline {
 		display: inline-block !important;
 		min-width: 12rem;
 		min-height: 1em;
 	}
+}
+
+.cmt-object {
+	background-color: none;
+	outline-color: green 2px dashed;
 }

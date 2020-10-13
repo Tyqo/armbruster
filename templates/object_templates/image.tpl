@@ -1,13 +1,18 @@
+{EVAL}
+	$text++;
+{ENDEVAL}
+
+
 <div class="object-element">
 	{IF ({LAYOUTMODE})}
-		{IMAGE:1:media}
+		{IMAGE:1:media/layoutmode}
 		<dl class="">
 			<dt>Kurze Bildbeschreibung</dt>
-			<dd>{HEAD:1}</dd>
+			<dd>{TEXT:{USERVAR:text}}</dd>
 		</dl>
 	{ELSE}
 		<figure class="figure">
-			<img class="image" src="{IMAGESRC:1}" alt="{HEAD:1}">
+			<img class="image" src="{IMAGESRC:1}" alt="{TEXT:{USERVAR:text}}">
 		</figure>
 	{ENDIF}
 </div>
