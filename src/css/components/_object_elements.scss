@@ -37,6 +37,10 @@
 	}
 }
 
+.copy-text p {
+	@include text;
+}
+
 .main-content {
 	.object-element:first-of-type {
 		margin-top: var(--header-height);

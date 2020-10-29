@@ -1,19 +1,18 @@
+{INCLUDE:PATHTOWEBROOT.'templates/object_templates/template-settings.tpl'}
+
+{USERVAR:head}
+
+{EVAL}
+	$head = 1;
+{ENDEVAL}
+
+{USERVAR:head}
+
 <article class="">
-	<article>
-		{INCLUDE:PATHTOWEBROOT.'templates/object_templates/head1.tpl'}
-		{INCLUDE:PATHTOWEBROOT.'templates/object_templates/text.tpl'}
-		{INCLUDE:PATHTOWEBROOT.'templates/object_templates/html.tpl'}
-		<!-- <div class="copy-text">
-			{HTML:1}
-		</div>
-		<button type="button" name="button" class="button">
-			{TEXT:1}
-		</button>
-		<button type="button" name="button" class="button">
-			{TEXT:2}
-		</button> -->
-	</article>
-	<div class="object-element">
-		<p class="text">{TEXT:1:all}</p>
-	</div>
+	{INCLUDE:PATHTOWEBROOT.'templates/object_templates/head1.tpl'}
+	{INCLUDE:PATHTOWEBROOT.'templates/object_templates/head2.tpl'}
+	{INCLUDE:PATHTOWEBROOT.'templates/object_templates/head3.tpl'}
+	{INCLUDE:PATHTOWEBROOT.'templates/object_templates/text.tpl'}
+	{INCLUDE:PATHTOWEBROOT.'templates/object_templates/html.tpl'}
+	{INCLUDE:PATHTOWEBROOT.'templates/object_templates/text.tpl'}
 </article>

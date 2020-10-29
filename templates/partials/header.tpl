@@ -2,7 +2,7 @@
   <nav class="center-nav outer-border" aria-label="Main">
 		<a href="/" class="link logo">
 			<span class="header-icon" aria-hidden="true">
-				{INCLUDE:PATHTOWEBROOT.'dist/img/Logo_Brennerei_Armbruster_sw-01.svg'}
+				{INCLUDE:PATHTOWEBROOT.'dist/img/logo.svg'}
 			</span>
 			<span class="visualy-hidden">
 				{PAGETITLE:2}

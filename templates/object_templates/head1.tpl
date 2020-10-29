@@ -1,7 +1,5 @@
-{EVAL}
-	$headCount++;
-{ENDEVAL}
+{MEDIA:INCRE}
 
 <div class="object-element">
-	<h1 class="headline">{HEAD:{USERVAR:headCount}}</h1>
+	<h1 class="headline">{MEDIA:THIS}</h1>
 </div>

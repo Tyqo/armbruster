@@ -1,6 +1,13 @@
 {INCLUDE:PATHTOWEBROOT.'templates/object_templates/template-settings.tpl'}
+{IMAGE, IMAGE, IMAGE, HEAD, }
 
 <section class="showcase divider object-element">
+	<figure class="divider__aside figure">
+		{INCLUDE:PATHTOWEBROOT.'templates/object_templates/image.tpl'}
+	</figure>
+	<figure class="divider__aside figure">
+		{INCLUDE:PATHTOWEBROOT.'templates/object_templates/image.tpl'}
+	</figure>
 	<figure class="divider__aside figure">
 		{INCLUDE:PATHTOWEBROOT.'templates/object_templates/image.tpl'}
 	</figure>

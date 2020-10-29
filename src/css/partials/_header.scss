@@ -43,15 +43,7 @@
 		margin: 0;
 		line-height: 0;
 		display: inline-block;
-		margin-left: $gutter;
-
-		@include for-size(tablet-portrait-up) {
-			margin-left: $gutter/2;
-		}
-
-		@include for-size(desktop-up) {
-			margin-left: 0;
-		}
+		margin-left: 0;
 
 		svg {
 			width: calc(#{$header-height} * 2);

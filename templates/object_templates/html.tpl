@@ -1,3 +1,3 @@
-<div class="object-element">
+<div class="object-element copy-text">
 	{HTML:1}
 </div>

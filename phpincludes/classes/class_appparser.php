@@ -56,6 +56,17 @@ class AppParser extends Parser {
 
 		return sprintf('<a href="javascript:void(0);" onclick="%s">%s</a>', $onclick, $mungedEmail);
 	}
+	
+	public static $tracker = 0;
+	
+	public function macro_TRACKER() {
+		return $this->tracker;
+	}
+
+	public function macro_INCRE() {
+		$this->tracker++;
+		return;
+	}
 
 }
 
