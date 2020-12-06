@@ -19,12 +19,6 @@
 	<link rel="icon" sizes="32x32" href="/dist/img/favicons/favicon-32x32.ico">
 	<link rel="icon" sizes="16x16" href="/dist/img/favicons/favicon-16x16.ico">
 	<link rel="apple-touch-icon" href="/dist/img/favicons/apple-touch-icon.png">
-	{EVAL}
-		$touchIconSizes = [57, 60, 72, 76, 114, 120, 144, 152, 167, 180, 1024];
-	{ENDEVAL}
-	{LOOP VAR(touchIconSizes:USERVAR)}
-		<link rel="apple-touch-icon" sizes="{LOOP:value}x{LOOP:value}" href="/dist/img/favicons/apple-touch-icon-{LOOP:value}x{LOOP:value}.png">
-	{ENDLOOP VAR}
 
 	<!-- Schema.org JSON+LD -->
 	<script type="application/ld+json">

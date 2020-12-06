@@ -1,4 +1,5 @@
 {INCLUDE:PATHTOWEBROOT.'templates/object_templates/template-settings.tpl'}
+{IMAGE, IMAGE, IMAGE, HEAD, }
 
 <section class="showcase">
 	<div class="divider early-break outer-border">

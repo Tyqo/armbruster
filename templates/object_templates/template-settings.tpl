@@ -1,5 +1,5 @@
 {EVAL}
-	$headCount = 0;
+	$head = 0;
 	$text = 0;
 	$imageCount = 0;
 	$paragraphCount = 0;

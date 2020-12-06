@@ -43,7 +43,10 @@ class SliderController extends Controller {
 		$this->parser->setParserVar('images', $images);
 		$this->parser->setParserVar('galleryPath', $this->galleryPath);
 		$this->parser->setParserVar('sizes', $this->sizes);
-    $this->content = $this->parser->parseTemplate($this->templatesPath.'slider.tpl');
+    $image1 = $this->parser->parseTemplate($this->templatesPath.'image.tpl');
+    $image2 = $this->parser->parseTemplate($this->templatesPath.'image.tpl');
+    $image3 = $this->parser->parseTemplate($this->templatesPath.'image.tpl');
+    $this->content = $this->parser->parseTemplate($this->templatesPath.'showcase.tpl');
   }
 }
 
