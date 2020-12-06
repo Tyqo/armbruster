@@ -1,11 +1,11 @@
 <?php
-namespace TS;
+namespace BA;
 
 use Contentomat\Contentomat;
 use Contentomat\Controller;
 use Contentomat\Psrautoloader;
 use Contentomat\Formomat\Formomat;
-use TS\Contact;
+use BA\Contact;
 
 class ContactController extends Controller {
 
@@ -46,7 +46,7 @@ class ContactController extends Controller {
 $autoLoader = new PsrAutoloader();
 $autoLoader->addNamespace('Contentomat', INCLUDEPATHTOADMIN."classes");
 $autoLoader->addNamespace('Contentomat\Formomat', INCLUDEPATHTOADMIN."classes/app_formomat");
-$autoLoader->addNamespace('TS', PATHTOWEBROOT."phpincludes/classes");
+$autoLoader->addNamespace('BA', PATHTOWEBROOT."phpincludes/classes");
 
 $ctl = new ContactController();
 $content = $ctl->work();

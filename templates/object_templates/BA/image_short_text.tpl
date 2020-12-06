@@ -1,7 +1,7 @@
 <section class="sidebyside">
   <figure class="sidebyside__figure figure">
   {IF({LAYOUTMODE})}
-    {IMAGE:1:media}
+    {IMAGE:1:media/layoutmode}
     <figcaption>
       <h3>Kurze Bildbeschreibung</h3>
       <p>{TEXT:2}</p>

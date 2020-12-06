@@ -1,6 +1,0 @@
-.center-paragraph {
-	margin: $gutter * 4 0;
-	@include inner-bound;
-	max-width: $inner-bound-width*0.75;
-	text-align: center;
-}

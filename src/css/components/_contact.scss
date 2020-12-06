@@ -1,19 +1,18 @@
 .contact {
-	margin-top: $gutter*2;
-  margin-bottom: $gutter*4;
-  $contact-width: 66.66%;
-  padding: 0 $gutter*2;
+	@include outer-border;
+	gap: $gutter * 3 !important;
+}
 
-  @include for-size(tablet-landscape-up) {
-		width: 66.66%;
-		padding: 0;
-  }
+.map {
+	margin: 4em 0;
+	height: 100%;
+	height: calc(100% - 4em);
+	min-height: 26em;
+	width: 100%;
+}
 
-  @include for-size(desktop-up) {
-    // max-width: $inner-bound-width;
-		width: 50%;
-		padding: 0;
-  }
+.contact {
+  $contact-width: 50%;
 
   &__item {
     margin: $gutter 0;
@@ -36,13 +35,6 @@
     flex: 0 0 $contact-width;
 		border-radius: 0;
 		box-shadow: none;
-
-    &:focus {
-      background: linear-gradient(45deg, $primary-color, $primary-color 14%, transparent 14.05%);
-      background-position: left bottom;
-      background-size: 6.5em 6.5em;
-      background-repeat: no-repeat;
-    }
   }
 
 	&__input {
@@ -55,7 +47,7 @@
 		font-weight: bold;
     margin-bottom: 0;
     display: block;
-    flex: 0 0 (100 - $contact-width);
+    flex: 0 0 25%;
 		padding: 0.05em $stroke-width 0;
 		max-height: 2.2em;
 
@@ -135,7 +127,8 @@
     .contact__label {
 			@include text;
       display: block;
-      flex-grow: 1;
+			font-weight: normal;
+			flex: auto;
 			padding: 0;
 			text-transform: none;
 			color: $accent-color;
@@ -151,7 +144,7 @@
 		margin-top: -$gutter/2;
 		margin-bottom: $gutter/2;
 		@include for-size(tablet-portrait-up) {
-			margin-left: 100 - $contact-width;
+			margin-left: 25%;
 		}
   }
 
@@ -170,7 +163,7 @@
 
 	&__footer {
 		@include for-size(tablet-portrait-up) {
-			margin-left: 100 - $contact-width;
+			margin-left: 25%;
 		}
 	}
 
@@ -191,7 +184,6 @@
 	}
 
 	.message {
-		// @include type-setting(1);
 		font-weight: bold;
 	}
 

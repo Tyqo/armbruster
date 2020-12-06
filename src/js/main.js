@@ -9,8 +9,10 @@ function APP () {
 	var self = this;
 	self.debug = false;
 
+  this.Nav = new Nav(self);
   this.Slider = new Slider(self);
   this.Overlay = new Overlay(self);
+  this.Overlay = new blazonMap(self);
 	this.init = function() {
 
 		document.addEventListener('DOMContentLoaded', this.setup);
@@ -31,8 +33,10 @@ function APP () {
 
 		document.body.classList.add('page-has-loaded');
 
+    self.Nav.init();
     self.Slider.init();
     self.Overlay.init();
+    self.blazonMap.init();
 		this.main();
 	};
 

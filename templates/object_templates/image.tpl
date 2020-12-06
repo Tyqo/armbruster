@@ -2,7 +2,6 @@
 	$text++;
 {ENDEVAL}
 
-
 <div class="object-element">
 	{IF ({LAYOUTMODE})}
 		{IMAGE:1:media/layoutmode}

@@ -1,10 +1,9 @@
 .start-slider {
-  margin: 0;
   padding: 0;
   border: 0;
 	overflow-x: hidden;
   background: $accent-color;
-	margin-bottom: $gutter * 4;
+	margin: 0 0 $gutter * 6 0 !important;
 
   .slick-arrow {
     position: absolute;
@@ -77,6 +76,7 @@
 		display: inline-block;
 		width: auto;
 		height: 100%;
+		max-height: 75vh;
 
     @supports (object-fit: cover) {
 			width: 100%;

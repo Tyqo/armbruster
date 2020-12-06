@@ -54,7 +54,7 @@ body {
 		hyphens: manual;
 	}
 
-	@include type-setting(3, 0);
+	@include type-setting(3, 0.5);
 	text-transform: uppercase;
 	font-weight: 800;
 	letter-spacing: 0.1em;
@@ -103,6 +103,10 @@ body {
 }
 
 .text {
+	@include text;
+}
+
+.copy-text p:last-of-type {
 	@include text;
 }
 

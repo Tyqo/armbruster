@@ -12,14 +12,16 @@ $type-scale: (
 	0: 1, // text
 	1: 1.14, // Nav
 	2: 1.8, // Sub-Headline
-	3: 2.5  // Headline
+	3: 2.5, // Headline
+	4: 3.2, // Big-Headline
 );
 
 $line-heights: (
 	0: 1,
 	1: 1.25,
 	2: 1.75,
-	3: 2.0
+	3: 2.0,
+	4: 2.5,
 );
 
 @function type-scale($level) {

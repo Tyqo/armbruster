@@ -1,0 +1,176 @@
+/**
+/* Drop all Styling that is only needed in LauyoutMode in here!
+/*
+ **/
+
+$blue: #1e5fad;
+$red: #ed1c24;
+
+.cmt-group {
+	outline: $blue 4px dashed;
+	margin: 0 1rem;
+	min-height: 6rem;
+	min-width: 12rem;
+	background-color: transparent !important;
+
+	.cmt-element {
+		min-width: 12rem;
+		min-height: 1em;
+		margin: 1rem 0;
+		outline: $blue 2px dotted !important;
+
+		a {
+			font-size: inherit;
+			line-height: inherit;
+		}
+
+		h1, h2, h3, h4, h5, h6, p {
+			width: 100%;
+		}
+	}
+}
+
+.cmt-object-content-wrapper > * {
+	margin-top: 0;
+}
+
+#layout-nav {
+	background: #333;
+	color: white;
+	width: 100%;
+	padding: 2rem 4rem;
+	list-style: lower-roman;
+	font-size: 1.2rem;
+	font-weight: 700;
+
+	ul {
+		padding-left: 2rem;
+	}
+
+	li {
+		margin-bottom: 0.2rem;
+	}
+}
+
+.main-content {
+	width: auto !important;
+}
+
+.cmt-element-image {
+	max-width: 33vw !important;
+	max-height: 33vw;
+
+	img {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
+.info-text {
+	font-size: 0.95rem;
+	color: #333;
+	margin: 1em 0;
+}
+
+.cmt-custom {
+	background: #f0f0f0;
+
+	.cmt-option--toggle {
+		border: solid 1px grey;
+		padding: 2px 0.5ch;
+		font-weight: bold;
+		font-size: 26px;
+		position: absolute;
+		top: 0;
+		right: 36px;
+		transform: translateY(-100%);
+		cursor: pointer;
+	}
+
+	&__wrapper {
+		display: flex;
+		// gap: 2rem;
+		margin: 0 -1rem 3rem -1rem;
+		padding-bottom: 2rem;
+		flex-wrap: wrap;
+		max-height: 1000px;
+		overflow: hidden;
+		transition: 500ms ease-in-out;
+
+		&[aria-expanded="false"] {
+			transition: none;
+			padding-bottom: 0;
+			max-height: 0;
+		}
+	}
+
+	&__option {
+		flex: 1 1 auto;
+		min-width: 200px;
+		margin: 0 1rem;
+	}
+
+	&__label {
+		font-size: 1.4rem;
+		color: #000;
+		margin: 1em 0;
+	}
+
+	&__info {
+		font-size: 0.95rem;
+		color: #333;
+		margin: 1em 0;
+	}
+
+	.cmt-element {
+		background: #fff;
+		padding: 0.2em;
+	}
+
+	select {
+		&[multiple] {
+			option {
+				margin: 0.25em;
+				padding: 0.05em;
+				border: 1px dashed grey;
+			}
+		}
+
+		width: 100%;
+		font-size: inherit;
+		font-family: inherit;
+		border: $blue 2px dotted;
+	}
+}
+
+.stage-slider {
+	list-style: none;
+	display: flex;
+	max-width: 100%;
+	width: auto;
+	overflow: scroll;
+	scroll-snap-type: x mandatory;
+
+	img {
+		max-width: auto;
+		max-width: 100%;
+		width: auto;
+	}
+
+	.stage-slide {
+		scroll-snap-align: center;
+		flex: auto;
+		min-width: 100%;
+	}
+
+	.stage-slide__detail {
+		margin: 1rem;
+		padding: 0;
+		max-width: 80%;
+		overflow: hidden;
+	}
+
+	.stage-slide__title {
+		margin-bottom: 0;
+	}
+}

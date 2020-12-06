@@ -1,0 +1,28 @@
+.grid {
+	display: grid;
+	grid-template-columns: auto;
+	gap: $gutter;
+	grid-template-columns: repeat(auto-fill, minmax((($inner-bound-width / 6) - $gutter), 1fr));
+	grid-template-rows: auto;
+
+	list-style: none;
+	align-content: stretch;
+	justify-content: center;
+
+	&__item {
+		position: relative;
+		display: flex;
+		flex-flow: column;
+		margin-bottom: $gutter * 4;
+	}
+
+	&__body {
+		margin-top: auto;
+		min-height: 12ex;
+
+		.teaser {
+			margin-top: 0;
+			margin-bottom: $gutter * 0.75;
+		}
+	}
+}

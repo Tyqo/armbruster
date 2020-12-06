@@ -18,5 +18,5 @@
       {ENDLOOP NAVIGATION}
     </ul>
   </nav>
-	<!-- INCLUDE:PATHTOWEBROOT.'templates/partials/mobile_nav.tpl' -->
+	{INCLUDE:PATHTOWEBROOT.'templates/partials/mobile_nav.tpl'}
 </header>

@@ -26,9 +26,12 @@ $inner-bound-width:78rem;
 
 $section-height: var(--max-browser-height);
 
-$stroke-width: $gutter*0.25;
+$stroke-width: $gutter*0.125;
 
 $outer-border: $gutter*2;
+
+$margin-top: $gutter * 3;
+$margin-bottom: $gutter * 6;
 
 /********************
  * Options/Switches *

@@ -28,6 +28,11 @@
 .additional-links {
 	margin-top: $gutter * 2;
 
+	@include for-size(tablet-portrait-up) {
+		margin-top: auto;
+	}
+
+
 	@include for-size(tablet-landscape-up) {
 		justify-self: flex-end;
 		align-self: flex-end;

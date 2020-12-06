@@ -1,5 +1,5 @@
 <?php
-namespace TS;
+namespace BA;
 
 use Contentomat\Model;
 
@@ -26,7 +26,7 @@ class Contact extends Model {
 
 
 	public function init() {
-		$this->tableName = 'ts_contacts';
+		$this->tableName = 'ba_contacts';
 	}
 }
 ?>

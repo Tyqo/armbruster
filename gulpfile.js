@@ -90,6 +90,7 @@ var settings = {
 		dest: pkg.project_settings.prefix + 'css/',
 		srcMain: [
 			'./src/css/main.scss',
+			'./src/css/layoutstyles.scss',
 			// You can add more files here that will be built seperately,
 			// f.e. newsletter.scss
 		],
@@ -120,6 +121,7 @@ var settings = {
 			'./src/js/vendor/**/*.js',
 			'./node_modules/jquery/dist/jquery.min.js',
 			'./node_modules/slick-carousel/slick/slick.min.js',
+			'./node_modules/leaflet/dist/leaflet.js',
 			// Add single vendor files here,
 			// they will be copied as is to `{prefix}/js/vendor/`,
 			// e.g. './node_modules/flickity/dist/flickity.pkgd.min.js',
@@ -127,16 +129,29 @@ var settings = {
 		dest:	pkg.project_settings.prefix + 'js/vendor/'
 	},
 
+	jsContentomat: {
+		src: [
+			'./src/js/**/edit.js',
+		],
+		dest: pkg.project_settings.prefix + 'js/contentomat/'
+	},
+
 	cssVendor: {
 		src:	[
 			'./src/css/vendor/**/*.css',
 			'./node_modules/slick-carousel/slick/slick.css',
+			'./node_modules/leaflet/dist/leaflet.css',
 			'./node_modules/slick-carousel/slick/slick-theme.css'
 			// Add single vendor files here,
 			// they will be copied as is to `{prefix}/css/vendor/`,
 			// e.g. './node_modules/flickity/dist/flickity.min.css'
 		],
 		dest:	pkg.project_settings.prefix + 'css/vendor/'
+	},
+
+	cssContentomat: {
+		src: './src/css/contentomat/**/*.scss',
+		dest: pkg.project_settings.prefix + 'css/contentomat',
 	},
 
 	fonts: {
@@ -266,13 +281,70 @@ function cssVendor() {
 		.pipe(gulp.dest(settings.cssVendor.dest));
 }
 
+function cssContentomat() {
+	var stream =
+		gulp.src(settings.cssContentomat.src)
+		.pipe($.plumber({ errorHandler: onError}))
+	;
+
+	var options = settings.css.options;
+	stream = stream.pipe($.sass(options).on('error', $.sass.logError))
+		.pipe($.autoprefixer(settings.css.options.autoprefixer))
+	;
+
+	stream = stream.pipe($.cleanCss())
+	.pipe($.header(banner, { pkg: pkg }));
+
+	stream = stream.pipe(gulp.dest(settings.cssContentomat.dest))
+		.pipe($.browserSync.stream());
+
+	return stream;
+}
 
 function jsVendor() {
 	return gulp.src(settings.jsVendor.src)
 		.pipe(gulp.dest(settings.jsVendor.dest));
 }
 
+function jsContentomat() {
+	return gulp.src(settings.jsContentomat.src)
+		.pipe(gulp.dest(settings.jsContentomat.dest));
 
+
+	$.log("Building Products Edit Javascript" + ((isProduction) ? " [production build]" : " [development build]"));
+
+	var stream = gulp
+	.src(settings.jsContentomat.src)
+	.pipe($.jsvalidate().on('error', function(jsvalidate) { console.log(jsvalidate.message); this.emit('end'); }));
+	if (!isProduction) {
+		stream = stream.pipe($.sourcemaps.init());
+	}
+
+	// stream = stream.pipe($.concat(settings.jsContentomat.destFile));
+
+	if (isProduction) {
+		stream = stream.pipe($.stripdebug())
+		.pipe($.terser()).on('error', function (error) {
+			if (error.plugin !== "gulp-terser-js") {
+				console.log(error.message);
+			}
+			this.emit('end');
+		})
+		// .pipe($.uglify().on('error', function(uglify) { console.log(uglify.message); this.emit('end'); }))
+		.pipe($.header(banner, {
+			pkg: pkg
+		}));
+
+	}
+	else {
+		stream = stream.pipe($.sourcemaps.write('./'));
+	}
+
+	stream = stream.pipe(gulp.dest(settings.jsContentomat.dest))
+	.pipe($.browserSync.stream());
+
+	return stream;
+}
 
 function fonts() {
 	return gulp.src(settings.fonts.src)
@@ -332,6 +404,15 @@ function gulpDefault(done) {
 	done();
 }
 
+function gulpContentomat(done) {
+
+	checkKey();
+	$.browserSync.init(settings.browserSync);
+
+	gulp.watch(settings.cssContentomat.src, cssContentomat);
+	gulp.watch(settings.jsContentomat.src, jsContentomat);
+	done();
+}
 
 /**
  * Generate favicons
@@ -384,14 +465,17 @@ function checkKey() {
 /*
  * Task: Build all
  */
-exports.build = series(cleanDist, js, jsVendor, css, cssVendor, images, sprite, icons, fonts, favicon);
+exports.build = series(cleanDist, js, jsVendor, jsContentomat, css, cssVendor, cssContentomat, images, sprite, icons, fonts, favicon);
 
 exports.default = gulpDefault;
+exports.gulpContentomat = gulpContentomat;
 exports.cleanDist = cleanDist;
 exports.css = css;
 exports.js = js;
 exports.jsVendor = jsVendor;
+exports.jsContentomat = jsContentomat;
 exports.cssVendor = cssVendor;
+exports.cssContentomat = cssContentomat;
 exports.fonts = fonts;
 exports.images = images;
 exports.icons = icons;

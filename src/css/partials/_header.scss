@@ -11,13 +11,7 @@
 	transform: none;
 
 	height: calc(#{$header-height});
-	background: rgba(255, 255, 255, 0.82);
-
-	@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-		background: rgba(255, 255, 255, 0.75);
-		backdrop-filter: blur(11px);
-		-webkit-backdrop-filter: blur(11px);
-	}
+	@include backdrop;
 
 	.center-nav__list {
 		margin-right: 0;
@@ -43,15 +37,7 @@
 		margin: 0;
 		line-height: 0;
 		display: inline-block;
-		margin-left: $gutter;
-
-		@include for-size(tablet-portrait-up) {
-			margin-left: $gutter/2;
-		}
-
-		@include for-size(desktop-up) {
-			margin-left: 0;
-		}
+		margin-left: 0;
 
 		svg {
 			width: calc(#{$header-height} * 2);
@@ -66,6 +52,10 @@
 
 			#brennerei * {
 				fill: $primary-color;
+			}
+
+			#claim * {
+				fill: $text-color;
 			}
 		}
 	}
